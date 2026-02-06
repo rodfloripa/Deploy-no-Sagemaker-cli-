@@ -22,8 +22,8 @@ RUN pip install --no-cache-dir sagemaker-inference gunicorn
 COPY inference.py /opt/ml/code/inference.py
 
 # 7. Caso você tenha um requirements.txt, descomente as linhas abaixo:
-# COPY requirements.txt /opt/ml/code/requirements.txt
-# RUN pip install --no-cache-dir -r /opt/ml/code/requirements.txt
+COPY requirements.txt /opt/ml/code/requirements.txt
+RUN pip install --no-cache-dir -r /opt/ml/code/requirements.txt
 
 # 8. Variáveis de ambiente para o SageMaker localizar o código
 ENV SAGEMAKER_PROGRAM=inference.py
