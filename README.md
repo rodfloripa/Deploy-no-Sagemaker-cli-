@@ -15,9 +15,11 @@ Deploy de um .py no Sagemaker usando  aws cli
 
 ## Testando
 
+echo '{"input": "Teste final!"}' > input.json
+
 aws sagemaker-runtime invoke-endpoint \
     --endpoint-name meu-modelo-endpoint \
     --region us-east-1 \
-    --body '{"input": "Teste direto na tela"}' \
+    --body fileb://input.json \
     --content-type application/json \
-    /dev/stderr 1>/dev/null
+    saida.json && cat saida.json && echo ""
