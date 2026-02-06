@@ -7,13 +7,11 @@ Deploy de um .py no Sagemaker usando  aws cli
 
 3. No Makefile coloque suas variáveis ROLE_ARN, BUCKET_NAME, REGION, IMAGE_NAME
 
-4. make clean
+4. make deploy
 
-5. make deploy
+5. make status
 
-6. make status
-
-7. Teste quando terminar de criar 
+6. Teste quando terminar de criar 
 
 ## Testando
 
