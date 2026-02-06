@@ -11,6 +11,10 @@ Deploy de um .py no Sagemaker usando  aws cli
 
 5. make deploy
 
+6. make status
+
+7.Teste quando terminar de criar 
+
 ## Testando
 
 echo '{"input": "Teste Final"}' > test_input.json
