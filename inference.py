@@ -1,27 +1,21 @@
 import json
 import logging
 
-# Configura logs para que você veja erros no CloudWatch
 logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 
 def model_fn(model_dir):
-    logger.info("Iniciando carregamento do modelo...")
-    # Retornamos um dicionário vazio apenas para o SageMaker não reclamar
+    logger.info("Modelo carregado com sucesso (dummy).")
     return {}
 
-def input_fn(request_body, request_content_type):
-    logger.info(f"Recebendo dados: {request_content_type}")
-    if request_content_type == 'application/json':
-        return json.loads(request_body)
-    return request_body
-
 def predict_fn(input_data, model):
-    logger.info(f"Processando input: {input_data}")
-    # Usamos .get() com um fallback para 'input' ou 'mensagem'
-    # Assim aceitamos qualquer um dos dois formatos
-    texto = input_data.get('input', input_data.get('mensagem', 'vazio'))
-    return f'Mensagem recebida com sucesso: {texto}'
-
-def output_fn(prediction, accept):
-    return json.dumps({'resultado': prediction}), 'application/json'
+    logger.info(f"Dados recebidos no predict: {input_data}")
+    
+    # Se o input_data vier como string (às vezes acontece), tentamos carregar
+    if isinstance(input_data, str):
+        input_data = json.loads(input_data)
+    
+    # Busca a chave 'input' ou 'mensagem'
+    texto = input_data.get('input', input_data.get('mensagem', 'sem conteúdo'))
+    
+    return {'resultado': f'Mensagem recebida: {texto}'}
