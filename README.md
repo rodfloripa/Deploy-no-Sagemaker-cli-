@@ -24,4 +24,5 @@ aws sagemaker-runtime invoke-endpoint \
     --content-type application/json \
     saida.json && cat saida.json && echo ""
 
-``` 
+```
+7. make destroy
