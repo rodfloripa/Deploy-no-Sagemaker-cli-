@@ -7,6 +7,4 @@ Deploy de um .py no Sagemaker usando  aws cli
 
 3. make clean
 
-4. aws sagemaker wait endpoint-deleted --endpoint-name meu-modelo-endpoint
-
 5. make deploy
