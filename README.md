@@ -13,7 +13,7 @@ Deploy de um .py no Sagemaker usando  aws cli
 
 6. make status
 
-7.Teste quando terminar de criar 
+7. Teste quando terminar de criar 
 
 ## Testando
 
