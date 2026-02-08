@@ -1,4 +1,4 @@
-# Deploy-no-Sagemaker-cli-
+# Deploy no Sagemaker pela cli
 Deploy de um .py no Sagemaker usando  aws cli
 
 1. Instale a aws cli
