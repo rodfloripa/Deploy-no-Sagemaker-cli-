@@ -1,7 +1,10 @@
-flask
-redis
-PyPDF2
-sentence-transformers
-openai
-python-dotenv
-torch --index-url https://download.pytorch.org/whl/cpu
+flask==3.0.3
+redis==5.0.8
+PyPDF2==3.0.1
+sentence-transformers==3.1
+openai==1.44.1
+python-dotenv==1.0.1
+torch==2.4.1+cpu --index-url https://download.pytorch.org/whl/cpu
+transformers==4.44.2
+numpy==1.26.4
+huggingface-hub==0.24.6
